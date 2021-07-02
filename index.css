@@ -1,0 +1,33 @@
+html,body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+ display: flex;
+    flex-direction: row;
+}
+.action{
+
+    width: 400px;
+    border-radius: 10px;
+    background: #9acfea;
+}
+.jumbotron{
+    height: 120mm;
+}
+
+.view{
+    width: 200mm;
+    background: #f5f5f5;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}

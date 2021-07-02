@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./jquery.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" id="app">
+
+    <div class="action ">
+        <div class="jumbotron">
+            <select name="" id="" class="form-control">
+                <option value="1">100*80</option>
+            </select>
+            <div>
+                <div>1 行</div>
+                <div>
+                    列: <input type="number" value="2">
+                </div>
+
+
+            </div>
+            <p style="margin-top: 30px;">
+                <a class="btn btn-primary" @click="add" href="#" role="button">创建</a>
+
+            </p>
+            <div>
+                <a class="btn btn-primary" @click="insert" href="#" role="button">创建</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="view">
+        {{message}}
+
+        <div class="boc" v-bind:style="box">
+            <temp :list="inner" @item-click="itemClick"></temp>
+
+        </div>
+    </div>
+
+
+    <template id="temp1">
+        <div style="overflow: hidden">
+            <div v-for="item in list" :style="item.blockStyle" :data-id="item.sign" @click="edit(item)">
+                <div v-if="item.block&&item.block.length==0">
+                    {{item.content}}
+                </div>
+                <div v-else>
+                    <temp :list="item.block"></temp>
+                </div>
+
+            </div>
+        </div>
+
+    </template>
+
+
+</div>
+
+
+</body>
+</html>
+<script src="./vue.js"></script>
+<script src="./index.js"></script>
